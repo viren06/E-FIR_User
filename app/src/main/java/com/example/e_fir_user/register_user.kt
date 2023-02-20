@@ -46,6 +46,11 @@ class register_user : AppCompatActivity() {
         phonenumber=findViewById<EditText>(R.id.edt_phone)
         age=findViewById<EditText>(R.id.edt_age)
 
+        val have_account=findViewById<Button>(R.id.button5)
+        have_account.setOnClickListener {
+            startActivity(Intent(this,user_login::class.java))
+        }
+
         registration.setOnClickListener{
             //check password
             var userfirebase: FirebaseUser?=null
