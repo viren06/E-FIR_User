@@ -53,7 +53,7 @@ class manage_profile : AppCompatActivity() {
 
     lateinit var finalUri: Uri
 
-    @SuppressLint("WrongViewCast")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage_profile)

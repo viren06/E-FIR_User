@@ -36,10 +36,10 @@ class dashboard : AppCompatActivity() {
                 builder.show()
                 true
             }
-//            R.id.edit->{
-//                startActivity(Intent(this, Edit_profile::class.java))
-//                true
-//            }
+            R.id.edit->{
+                startActivity(Intent(this, editProfile::class.java))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
 
         }
