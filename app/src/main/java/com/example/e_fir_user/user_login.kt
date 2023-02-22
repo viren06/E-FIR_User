@@ -52,7 +52,7 @@ class user_login : AppCompatActivity() {
         login.setOnClickListener{
 
             val database = FirebaseDatabase.getInstance()
-            val myRef = database.getReference("User")
+            val myRef = database.getReference("user")
             var progressDialog = ProgressDialog(this)
             progressDialog.setTitle("It will take some time")
             progressDialog.setMessage("hello")

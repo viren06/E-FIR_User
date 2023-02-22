@@ -81,7 +81,7 @@ class register_user : AppCompatActivity() {
                                 hashMap["mobileNumber"]=phonenumber.text.toString()
                                 hashMap["age"]=age.text.toString()
 
-                                var myref= FirebaseDatabase.getInstance().getReference("User")
+                                var myref= FirebaseDatabase.getInstance().getReference("user")
                                 myref.child(user!!.uid.toString()).setValue(hashMap).addOnCompleteListener(this){
                                     Toast.makeText(this,"user created",Toast.LENGTH_SHORT).show()
                                     updateUi(user)
