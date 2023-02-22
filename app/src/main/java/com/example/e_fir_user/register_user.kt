@@ -17,6 +17,14 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
 class register_user : AppCompatActivity() {
+
+    override fun onStart() {
+        super.onStart()
+        var user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            updateUi(user)
+        }
+    }
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
 
@@ -35,8 +43,8 @@ class register_user : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance();
         var user=FirebaseAuth.getInstance().currentUser
-        if(user!=null)
-            updateUi(user)
+//        if(user!=null)
+//            updateUi(user)
         var isAllFieldsChecked = false
 
         val registration =findViewById<Button>(R.id.button_reg)
@@ -87,7 +95,7 @@ class register_user : AppCompatActivity() {
                                     updateUi(user)
                                     progressDialog.dismiss()
 
-                                    var int1= Intent(this@register_user, dashboard::class.java)
+                                    var int1= Intent(this@register_user,user_login::class.java)
                                     int1.putExtra("username",username.toString())
                                     int1.putExtra("password",password.toString())
                                     startActivity(int1)
