@@ -119,8 +119,12 @@ class register_user : AppCompatActivity() {
     }
     private fun checkAllFields(): Boolean {
         var password1=findViewById<EditText>(R.id.edt_pass)
+        var mobile_number1=findViewById<EditText>(R.id.edt_phone)
         if (password1.length()<8){
             password1.setError("password must be minimum 8 characters")
+        }
+        if (mobile_number1.length()<10){
+            mobile_number1.setError("mobile number must be 10 digits")
         }
         return true
 
