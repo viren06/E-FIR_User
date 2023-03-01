@@ -18,7 +18,14 @@
         android:theme="@style/Theme.EFIR_User"
         tools:targetApi="31">
         <activity
-            android:name=".editProfile"
+            android:name=".vehicle_form_2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Vehicle_form"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -27,7 +34,6 @@
         <activity
             android:name=".manage_profile"
             android:exported="true">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -51,7 +57,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fileproviderpaths"></meta-data>
+                android:resource="@xml/fileproviderpaths" />
         </provider>
 
         <activity
@@ -64,7 +70,11 @@
         <activity
             android:name=".user_login"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -80,19 +90,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-
-
-
     </application>
 
 </manifest>
