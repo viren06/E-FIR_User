@@ -25,6 +25,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".missingPhone_details"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".vehicle_form_2"
             android:exported="false" >
             <meta-data
