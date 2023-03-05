@@ -1,18 +1,28 @@
 package com.example.e_fir_user
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 
 class dashboard : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+        var missing_vehicle=findViewById<Button>(R.id.btn_vehicle)
+        missing_vehicle.setOnClickListener {
+            startActivity(Intent(this,Vehicle_form::class.java))
+            finish()
+        }
     }
 
     //otion menue

@@ -30,7 +30,7 @@ class register_user : AppCompatActivity() {
 
 
 
-    private var mAuth: FirebaseAuth? = null
+    //private var mAuth: FirebaseAuth? = null
     lateinit var email: EditText
     lateinit var password: EditText
     lateinit var username: EditText
@@ -41,8 +41,8 @@ class register_user : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_user)
 
-        mAuth = FirebaseAuth.getInstance();
-        var user=FirebaseAuth.getInstance().currentUser
+       var mAuth = FirebaseAuth.getInstance();
+        var fuser=FirebaseAuth.getInstance().currentUser
 //        if(user!=null)
 //            updateUi(user)
         var isAllFieldsChecked = false
@@ -78,7 +78,7 @@ class register_user : AppCompatActivity() {
                     mAuth!!.createUserWithEmailAndPassword(email.text.toString(),password.text.toString())
                         .addOnCompleteListener(this){task ->
                             val user = mAuth!!.currentUser
-                            if (user != null){
+                            if(user !=null){
                                 userfirebase= user
 
                                 var hashMap=HashMap<String,Any>()
@@ -88,6 +88,7 @@ class register_user : AppCompatActivity() {
                                 hashMap["password"]=password.text.toString()
                                 hashMap["mobileNumber"]=phonenumber.text.toString()
                                 hashMap["age"]=age.text.toString()
+                                hashMap["uid"]= userfirebase!!.uid.toString()
 
                                 var myref= FirebaseDatabase.getInstance().getReference("user")
                                 myref.child(user!!.uid.toString()).setValue(hashMap).addOnCompleteListener(this){
@@ -102,7 +103,10 @@ class register_user : AppCompatActivity() {
                                     finish()
                                 }
                             }
+
+
                         }
+
                         .addOnCanceledListener {
                             Toast.makeText(this,"error try after some time",Toast.LENGTH_LONG).show()
                             progressDialog.dismiss()

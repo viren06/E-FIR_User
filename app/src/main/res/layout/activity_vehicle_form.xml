@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_address"
+        android:id="@+id/et_details"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_marginLeft="30dp"
@@ -116,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_address" />
+        app:layout_constraintTop_toBottomOf="@+id/et_details" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
