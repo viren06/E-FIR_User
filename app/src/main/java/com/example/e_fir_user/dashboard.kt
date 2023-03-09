@@ -9,10 +9,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.e_fir_user.Connectivity.ConnectivityLiveData
 import com.example.e_fir_user.databinding.ShowStationBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -21,6 +25,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class dashboard : AppCompatActivity() {
+   // next two lines is for observing network
+    private lateinit var connectivityLiveData: ConnectivityLiveData
+   // var network=findViewById<TextView>(R.id.network_tv)
+    private val network:TextView
+        get() = findViewById(R.id.network_tv)
+
     val database= FirebaseDatabase.getInstance()
     private var mauth: FirebaseAuth?=null
     lateinit var showstaion : RecyclerView
@@ -28,6 +38,16 @@ class dashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+        // next 8 lines is for observing network
+        connectivityLiveData= ConnectivityLiveData(application)
+        connectivityLiveData.observe(this, Observer {isAvailable->
+            when(isAvailable)
+            {
+                true-> network.text = "Network connection is Active"
+                false-> network.text ="Please provide  Network Connection"
+            }
+        })
 
         var missing_vehicle=findViewById<Button>(R.id.btn_vehicle)
         missing_vehicle.setOnClickListener {
@@ -73,7 +93,7 @@ class dashboard : AppCompatActivity() {
 
 
     //otion menue
-    override fun onCreateOptionsMenu (menu: Menu?): Boolean {
+    internal fun onCreateOptionsMenu (menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_menu,menu)
         return true
     }
