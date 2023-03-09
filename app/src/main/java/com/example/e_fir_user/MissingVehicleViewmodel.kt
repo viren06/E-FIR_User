@@ -34,7 +34,8 @@ class MissingVehicleViewmodel : ViewModel() {
     }
 
     fun savedata(uid:String,name:String,aadhar_number:String,email:String,address:String,registration_number:String,
-    last_seen_date:String,vehicle_type:String,other_detail:String,status:String,username:String,vehicleid:String,img:String) {
+    last_seen_date:String,vehicle_type:String,other_detail:String,status:String,username:String,vehicleid:String,img:String,
+    stationanme:String,stationdistrict:String,stationid:String) {
         val vehicle=HashMap<String,Any>()
         vehicle["uid"]=uid
         vehicle["name"]=name
@@ -48,6 +49,9 @@ class MissingVehicleViewmodel : ViewModel() {
         vehicle["status"]=status
         vehicle["vehicleid"]=vehicleid
         vehicle["img"]=img
+        vehicle["sname"]=stationanme
+        vehicle["sdistrict"]=stationdistrict
+        vehicle["sid"]=stationid
         myRef.child(vehicleid).setValue(vehicle)
     }
 

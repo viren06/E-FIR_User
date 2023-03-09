@@ -19,11 +19,19 @@ class Vehicle_form : AppCompatActivity() {
             var email=findViewById<EditText>(R.id.et_email).text.toString()
             var address=findViewById<EditText>(R.id.et_details).text.toString()
 
+            //geeting station data
+            var pname=intent.getStringExtra("sname")
+            var pdistrict=intent.getStringExtra("district")
+            var pstationid=intent.getStringExtra("pid")
+
             val exntent=Intent(this@Vehicle_form,vehicle_form_2::class.java)
             exntent.putExtra("addharname",addhar_name.toString())
             exntent.putExtra("aadharnumber",aadhar_number.toString())
             exntent.putExtra("email",email.toString())
             exntent.putExtra("address",address.toString())
+            exntent.putExtra("spname",pname.toString())
+            exntent.putExtra("district",pdistrict.toString())
+            exntent.putExtra("pid",pstationid.toString())
             startActivity(exntent)
 
         }

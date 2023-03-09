@@ -36,6 +36,9 @@ class ShoeStationAdapter(var ctx: Activity, var arlist: ArrayList<showstationmod
         }
         holder.miss_vehicle.setOnClickListener {
             var int2 = Intent(ctx,Vehicle_form::class.java)
+            int2.putExtra("sname",arlist[position].username.toString())
+            int2.putExtra("district",arlist[position].district.toString())
+            int2.putExtra("pid",arlist[position].policestationid.toString())
             ctx.startActivity(int2)
         }
     }

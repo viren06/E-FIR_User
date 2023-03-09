@@ -33,6 +33,10 @@ class vehicle_form_2 : AppCompatActivity() {
         var iEmial=intent.getStringExtra("email")
         var iaddress=intent.getStringExtra("address")
 
+        var isname=intent.getStringExtra("spname")
+        var isdistrict=intent.getStringExtra("district")
+        var ispid=intent.getStringExtra("pid")
+
          Registration_number=findViewById<EditText>(R.id.et_reg_no)
          Last_seen_date=findViewById<EditText>(R.id.et_last_seen)
          Type=findViewById<EditText>(R.id.et_model)
@@ -69,7 +73,9 @@ class vehicle_form_2 : AppCompatActivity() {
                                     username!!,
                                     key.toString(),
                                     "null photo",
-
+                                    isname.toString(),
+                                    isdistrict.toString(),
+                                    ispid.toString()
                                 )
                                 progressDialog.dismiss()
                                 startActivity(Intent(this, dashboard::class.java))
