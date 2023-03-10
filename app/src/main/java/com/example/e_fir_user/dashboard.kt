@@ -1,6 +1,7 @@
 package com.example.e_fir_user
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,21 +10,25 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_fir_user.databinding.ShowStationBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 
 class dashboard : AppCompatActivity() {
     val database= FirebaseDatabase.getInstance()
     private var mauth: FirebaseAuth?=null
     lateinit var showstaion : RecyclerView
+    var data= arrayListOf<showstationmodel>()
+    var displaylist= arrayListOf<showstationmodel>()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,25 +46,67 @@ class dashboard : AppCompatActivity() {
             finish()
         }
 
-        var data= arrayListOf<showstationmodel>()
+        val myref=database.getReference("policestation")
+
+        //show data first time
+        shopdataupdate(myref)
+
+        var lblcity=findViewById<TextView>(R.id.lblselectcity)
+        lblcity.setOnClickListener {
+            val builder= Dialog(this)
+            //builder.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            builder.setCancelable(false)
+            builder.setTitle("Select City")
+            builder.setContentView(R.layout.select_city)
+            var btn=builder.findViewById<Button>(R.id.btncity)
+            val city1=builder.findViewById<EditText>(R.id.edtcity)
+
+            btn.setOnClickListener {
+                var city=city1.text.toString()
+                lblcity.text="City : "+city
+                if(city!="") {
+                    Toast.makeText(baseContext, city.toString(), Toast.LENGTH_SHORT).show()
+                    shopdataupdate(myref, city)
+                }
+                else
+                    Toast.makeText(baseContext, city.toString(), Toast.LENGTH_SHORT).show()
+                builder.dismiss()
+            }
+            builder.show()
+
+        }
+
+    }
+
+    private fun shopdataupdate(myref: DatabaseReference,city: String?=null) {
+
+        data.clear()
+        displaylist.clear()
         showstaion=findViewById(R.id.rv_showstation)
 
-        val myref=database.getReference("policestation")
         myref.addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(datasnapshot: DataSnapshot) {
                 data.clear()
-                var ad= ShoeStationAdapter(this@dashboard,data)
-                if(datasnapshot.exists()) {
+                displaylist.clear()
+                var ad= ShoeStationAdapter(this@dashboard,displaylist)
+
                     for (v in datasnapshot.children) {
                         val value = v.getValue(showstationmodel::class.java)
                         Log.d("key", value.toString())
                         if (value != null) {
-                            data.add(value)
+                            if(city!=null){
+                                if(value.district.equals(city,true)) {
+                                    data.add(value)
+                                }
+                            }
+                            else
+                                data.add(value)
                         }
                     }
+                    displaylist.addAll(data)
                     showstaion.adapter = ad
-                }
+
             }
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
@@ -67,7 +114,6 @@ class dashboard : AppCompatActivity() {
 
         })
         showstaion.layoutManager= LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-
 
     }
 
