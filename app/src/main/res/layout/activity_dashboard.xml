@@ -6,69 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".dashboard">
 
+    <!--    <Button-->
+<!--        android:id="@+id/btn_vehicle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="122dp"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginEnd="195dp"-->
+<!--        android:text="Complaint for Missing Vehicle"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.316"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_missingpphone"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="58dp"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginEnd="68dp"-->
+<!--        android:text="complaint for missing Phone"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle" />-->
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="230dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="157dp"
         android:text="user dashboard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_vehicle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="195dp"
-        android:text="Complaint for Missing Vehicle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/btn_missingpphone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="68dp"
-        android:text="complaint for missing Phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_vehicle" />
 
     <TextView
         android:id="@+id/lblselectcity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="325dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="328dp"
         android:text="Select City"
         android:textColor="#F31404"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_missingpphone" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_showstation"
-        android:layout_width="409dp"
-        android:layout_height="574dp"
+        android:layout_width="407dp"
+        android:layout_height="623dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_missingpphone"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:listitem="@layout/show_station" />
 </androidx.constraintlayout.widget.ConstraintLayout>

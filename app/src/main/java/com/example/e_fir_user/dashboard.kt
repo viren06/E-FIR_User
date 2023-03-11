@@ -34,17 +34,17 @@ class dashboard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        var missing_vehicle=findViewById<Button>(R.id.btn_vehicle)
-        missing_vehicle.setOnClickListener {
-            startActivity(Intent(this,Vehicle_form::class.java))
-            finish()
-        }
+//        var missing_vehicle=findViewById<Button>(R.id.btn_vehicle)
+//        missing_vehicle.setOnClickListener {
+//            startActivity(Intent(this,Vehicle_form::class.java))
+//            finish()
+//        }
 
-        var missing_phone=findViewById<Button>(R.id.btn_missingpphone)
-        missing_phone.setOnClickListener {
-            startActivity(Intent(this,missingPhone_details::class.java))
-            finish()
-        }
+//        var missing_phone=findViewById<Button>(R.id.btn_missingpphone)
+//        missing_phone.setOnClickListener {
+//            startActivity(Intent(this,missingPhone_details::class.java))
+//            finish()
+//        }
 
         val myref=database.getReference("policestation")
 
