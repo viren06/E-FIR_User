@@ -27,8 +27,6 @@
             android:layout_height="170dp"
             android:orientation="horizontal"
             android:weightSum="4"
-
-
             >
 
             <LinearLayout

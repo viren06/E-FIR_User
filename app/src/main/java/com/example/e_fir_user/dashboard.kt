@@ -142,6 +142,10 @@ class dashboard : AppCompatActivity() {
                 startActivity(Intent(this, editProfile::class.java))
                 true
             }
+            R.id.show->{
+                startActivity(Intent(this, user_complaint::class.java))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
 
         }

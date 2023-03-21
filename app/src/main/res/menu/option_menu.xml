@@ -10,4 +10,9 @@
         android:id="@+id/edit"
         android:title="Go to Profile"
         />
+
+    <item
+        android:id="@+id/show"
+        android:title="Show Complaints"
+        />
 </menu>
