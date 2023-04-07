@@ -34,7 +34,7 @@ class user_login : AppCompatActivity() {
 
         val login=findViewById<Button>(R.id.button)
 
-        val account_btn=findViewById<Button>(R.id.button)
+        val account_btn=findViewById<TextView>(R.id.btn_reg)
         account_btn.setOnClickListener {
             startActivity(Intent(this,register_user::class.java))
         }
@@ -42,7 +42,7 @@ class user_login : AppCompatActivity() {
         val forgetpassword=findViewById<TextView>(R.id.lblforgetPass)
         forgetpassword.setOnClickListener {
             startActivity(Intent(this,forgot_password::class.java))
-            Toast.makeText(this,"diracting to forgot password page",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"directing to forgot password page",Toast.LENGTH_LONG).show()
         }
 
 //        if(user != null){

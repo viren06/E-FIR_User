@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -54,7 +55,7 @@ class register_user : AppCompatActivity() {
         phonenumber=findViewById<EditText>(R.id.edt_phone)
         age=findViewById<EditText>(R.id.edt_age)
 
-        val have_account=findViewById<Button>(R.id.button5)
+        val have_account=findViewById<ImageView>(R.id.back_user)
         have_account.setOnClickListener {
             startActivity(Intent(this,user_login::class.java))
         }
