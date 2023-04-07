@@ -4,31 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="#eeeeee"
     tools:context=".register_user"
     >
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="480dp"
-        android:layout_height="180dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/efirlogo" />
 
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="44dp"
         android:text="User Registration"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="italic"
+        android:fontFamily="@font/roboto_thin"
+        android:textSize="32sp"
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +33,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:text="User Name"
-        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/roboto_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
@@ -51,14 +44,14 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edit_text_background"
-
+        android:fontFamily="@font/roboto_light"
         android:drawablePadding="20dp"
         android:ems="10"
         android:gravity="left"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+
         android:hint="User Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +67,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:text="Email"
-        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/roboto_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_username"/>
 
@@ -87,7 +80,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edit_text_background"
-
+        android:fontFamily="@font/roboto_light"
         android:drawablePadding="20dp"
         android:ems="10"
         android:gravity="left"
@@ -95,8 +88,8 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
@@ -110,7 +103,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:text="Age"
-        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/roboto_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_email"/>
     <EditText
@@ -123,14 +116,15 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/edit_text_background"
         android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_light"
         android:ems="10"
         android:gravity="left"
         android:hint="Age"
         android:inputType="number"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv4" />
@@ -143,7 +137,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:text="Phone"
-        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/roboto_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_age"/>
 
@@ -159,13 +153,14 @@
         android:background="@drawable/edit_text_background"
         android:drawablePadding="20dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_light"
         android:gravity="left"
         android:hint="Phone"
         android:inputType="number"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv5" />
@@ -178,7 +173,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:text="Password"
-        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/roboto_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_phone"/>
     <EditText
@@ -190,7 +185,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edit_text_background"
-
+        android:fontFamily="@font/roboto_light"
         android:drawablePadding="20dp"
         android:ems="10"
         android:gravity="left"
@@ -198,8 +193,7 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv6" />
@@ -210,29 +204,41 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="30dp"
         android:text="register"
         android:textColor="#FFFFFF"
-        android:textSize="15dp"
+        android:background="@drawable/btn_green"
+        android:fontFamily="@font/roboto_light"
+
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_pass" />
 
-    <Button
+    <TextView
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
-        android:background="#FFFFFF"
+        android:fontFamily="@font/roboto_light"
         android:text="Already have Account? click here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_reg" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp"
+        android:layout_marginEnd="-50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

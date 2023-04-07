@@ -34,7 +34,7 @@ class user_login : AppCompatActivity() {
 
         val login=findViewById<Button>(R.id.button)
 
-        val account_btn=findViewById<Button>(R.id.button_register_activity)
+        val account_btn=findViewById<Button>(R.id.button)
         account_btn.setOnClickListener {
             startActivity(Intent(this,register_user::class.java))
         }

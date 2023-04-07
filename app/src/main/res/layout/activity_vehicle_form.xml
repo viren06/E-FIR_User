@@ -4,18 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="#eeeeee"
 
     tools:context=".user_login">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/green_cir" />
 
     <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="30dp"
-
+        android:paddingStart="15dp"
         android:background="@drawable/edit_text_background"
         android:drawablePadding="20dp"
         android:ems="10"
@@ -24,8 +34,8 @@
         android:inputType="textPersonName"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+        android:fontFamily="@font/roboto_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,11 +50,12 @@
         android:background="@drawable/edit_text_background"
         android:gravity="left"
         android:hint="Address"
+        android:paddingStart="15dp"
         android:inputType="text"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+        android:fontFamily="@font/roboto_light"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
@@ -56,6 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
+        android:paddingStart="15dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edit_text_background"
@@ -64,8 +76,8 @@
         android:inputType="number"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+        android:fontFamily="@font/roboto_light"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,11 +93,12 @@
         android:background="@drawable/edit_text_background"
         android:gravity="left"
         android:hint="Email"
+        android:paddingStart="15dp"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="#000000"
+        android:fontFamily="@font/roboto_light"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,27 +107,30 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:fontFamily="@font/roboto_thin"
         android:text="Owner's Information"
-        android:textColor="@color/colorAccent"
-        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
 
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/owner_btn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:background="#FFFFFF"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/btn_green"
+        android:fontFamily="@font/roboto_light"
         android:text="Next"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_details" />
 

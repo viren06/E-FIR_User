@@ -8,26 +8,28 @@
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
     android:layout_marginLeft="6dp"
-    android:layout_marginRight="6dp">
+    android:layout_marginRight="6dp"
+
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardanim"
-        android:layout_width="match_parent"
-        android:layout_height="192dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_weight="1"
-        android:background="#fece2f"
+        android:background="#511FE822"
 
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp">
+        app:cardElevation="6dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:background="#511FE822"
             android:orientation="horizontal"
-            android:weightSum="4"
-            >
+            android:weightSum="4">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,12 +43,15 @@
 
                     <TextView
                         android:id="@+id/Station_name"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:fontFamily="@font/roboto_thin"
                         android:hint="Station name"
-                        android:textSize="20dp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="23dp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -54,11 +59,12 @@
 
                     <TextView
                         android:id="@+id/Station_district"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
                         android:hint="District"
                         android:textSize="20dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -68,11 +74,12 @@
 
                     <TextView
                         android:id="@+id/Station_abc"
-                        android:gravity="center"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="center"
                         android:hint="Complaint For Missing"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -85,8 +92,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="59dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="70dp"
+                        android:background="@drawable/btn_green"
+                        android:fontFamily="@font/roboto_light"
+
                         android:text="Phone"
+                        android:textColor="@color/white"
                         app:layout_constraintEnd_toStartOf="@+id/btn_vehicle_complaint"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Station_abc" />
@@ -96,8 +108,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="60dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="37dp"
+                        android:background="@drawable/btn_green"
+                        android:fontFamily="@font/roboto_light"
                         android:text="Vehicle"
+                        android:textColor="@color/white"
+
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/btn_phone_complaint"
                         app:layout_constraintTop_toBottomOf="@+id/Station_abc" />

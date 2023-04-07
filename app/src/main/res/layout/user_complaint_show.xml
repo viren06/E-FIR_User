@@ -8,7 +8,9 @@
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
     android:layout_marginLeft="6dp"
-    android:layout_marginRight="6dp">
+    android:layout_marginRight="6dp"
+
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardanim"
@@ -44,6 +46,9 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="13dp"
                     android:text="User name"
+                    android:textSize="22sp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/roboto_thin"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,6 +56,9 @@
                     android:id="@+id/txt_complaintfor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
                     android:text="Aadhar Number"
@@ -61,9 +69,12 @@
                     android:id="@+id/txt_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
                     android:layout_marginStart="10dp"
+                    android:textSize="16sp"
                     android:layout_marginTop="7dp"
                     android:text="Address"
+                    android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_complaintfor" />
 

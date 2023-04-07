@@ -48,7 +48,7 @@ class editProfile : AppCompatActivity() {
         edit_email=findViewById<EditText>(R.id.edit_email)
         btndone=findViewById<ImageView>(R.id.btndone)
         progressBar=findViewById<ProgressBar>(R.id.progressBar)
-        var edit_change_profile=findViewById<TextView>(R.id.edit_change_profile)
+
         var btnclose=findViewById<ImageView>(R.id.btnclose)
 
         //val viewmodel1=ViewModelProvider.get<>()
