@@ -93,12 +93,40 @@ class missingPhone_details : AppCompatActivity() {
 
     private fun checkAllFields(): Boolean {
 
-        if (mserialnumber.text.isEmpty()){
-            mserialnumber.setError("Enter vehicle type.")
+        if (mserialnumber.text.length<15){
+            mserialnumber.setError("Enter correct IMEI number")
             return false
         }
-        if (maadharnumber.text.isEmpty()){
-            maadharnumber.setError("Enter registration number")
+        if (maadharnumber.text.length<12){
+            maadharnumber.setError("Enter aadhar number")
+            return false
+        }
+        if (musername.text.isEmpty()){
+            musername.setError("Enter aadhar name")
+            return false
+        }
+        if (memail.text.isEmpty()){
+            memail.setError("Enter email")
+            return false
+        }
+        if (maddress.text.isEmpty()){
+            maddress.setError("Enter your address")
+            return false
+        }
+        if (mmobilenumber.text.length<10){
+            mmobilenumber.setError("Enter correct mobile number")
+            return false
+        }
+        if (mmobilecompany.text.isEmpty()){
+            mmobilecompany.setError("Enter mobile company")
+            return false
+        }
+        if (mlastdate.text.isEmpty()){
+            mlastdate.setError("Enter last date")
+            return false
+        }
+        if (mrelation.text.length<12){
+            mrelation.setError("Enter your relation with user")
             return false
         }
 

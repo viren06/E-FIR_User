@@ -42,6 +42,11 @@ class vehicle_form_2 : AppCompatActivity() {
          Type=findViewById<EditText>(R.id.et_model)
          Other_detail=findViewById<EditText>(R.id.et_details)
 
+        Last_seen_date.setOnClickListener()
+        {
+
+        }
+
         val viewModel=ViewModelProvider(this).get(MissingVehicleViewmodel::class.java)
         viewModel.getdata(firebaseuid)?.observe(this, androidx.lifecycle.Observer {
             username = it.username
@@ -86,11 +91,21 @@ class vehicle_form_2 : AppCompatActivity() {
     private fun checkAllFields(): Boolean {
 
         if (Type.text.isEmpty()){
-            Type.setError("Enter vehicle type.")
+            Type.setError("Enter vehicle type")
             return false
         }
         if (Registration_number.text.isEmpty()){
             Registration_number.setError("Enter registration number")
+            return false
+        }
+
+        if (Other_detail.text.isEmpty()){
+            Other_detail.setError("Enter RC book  number")
+            return false
+        }
+
+        if (Last_seen_date.text.isEmpty()){
+            Last_seen_date.setError("Enter vehicle's last seen date")
             return false
         }
 

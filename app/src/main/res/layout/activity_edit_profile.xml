@@ -185,6 +185,7 @@
         android:drawablePadding="20dp"
         android:ems="10"
         android:gravity="left"
+        android:enabled="false"
         android:hint="Email"
         android:fontFamily="@font/roboto_light"
         android:inputType="textEmailAddress"
