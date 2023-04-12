@@ -71,7 +71,7 @@
         android:background="@drawable/edit_text_background"
         android:gravity="left"
         android:hint="Last Seen (Date)"
-        android:inputType="date"
+
         android:padding="10dp"
         android:paddingLeft="10dp"
         android:textColor="#000000"

@@ -1,5 +1,6 @@
 package com.example.e_fir_user
 
+import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
@@ -42,9 +43,18 @@ class vehicle_form_2 : AppCompatActivity() {
          Type=findViewById<EditText>(R.id.et_model)
          Other_detail=findViewById<EditText>(R.id.et_details)
 
-        Last_seen_date.setOnClickListener()
-        {
+        // Date Picker
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
 
+        Last_seen_date.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view, mYear, mMonth, mDay->
+                Last_seen_date.setText(""+ mDay + "/" + mMonth + "/" + mYear)
+            }, year, month, day)
+            //shoq dialog
+            dpd.show()
         }
 
         val viewModel=ViewModelProvider(this).get(MissingVehicleViewmodel::class.java)
