@@ -1,5 +1,7 @@
 package com.example.e_fir_user
 
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 
 class missingPhone_details : AppCompatActivity() {
     var username:String?=null
@@ -28,6 +31,7 @@ class missingPhone_details : AppCompatActivity() {
 
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_missing_phone_details)
@@ -42,6 +46,23 @@ class missingPhone_details : AppCompatActivity() {
         mrelation=findViewById(R.id.et_relation)
         mserialnumber=findViewById(R.id.et_serialnumber)
         complaint_phone=findViewById(R.id.owner_btn)
+        val Last_seen_btn = findViewById<Button>(R.id.last_seen_btn)
+        //date picker
+
+        // Date Picker
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        Last_seen_btn.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay->
+                mlastdate.setText(""+ mDay + "/" + mMonth + "/" + mYear)
+            }, year, month, day)
+            //shoq dialog
+            dpd.show()
+        }
+
 
         //geeting station data from shoestationadapter using intent
         var pname=intent.getStringExtra("sname")

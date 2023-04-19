@@ -1,5 +1,6 @@
 package com.example.e_fir_user
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
@@ -25,6 +26,7 @@ class vehicle_form_2 : AppCompatActivity() {
     lateinit var Other_detail:EditText
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vehicle_form2)
@@ -42,6 +44,7 @@ class vehicle_form_2 : AppCompatActivity() {
          Last_seen_date=findViewById<EditText>(R.id.et_last_seen)
          Type=findViewById<EditText>(R.id.et_model)
          Other_detail=findViewById<EditText>(R.id.et_details)
+       val date_select = findViewById<Button>(R.id.btn_dt_sel)
 
         // Date Picker
         val c = Calendar.getInstance()
@@ -49,7 +52,7 @@ class vehicle_form_2 : AppCompatActivity() {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        Last_seen_date.setOnClickListener {
+        date_select.setOnClickListener {
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view, mYear, mMonth, mDay->
                 Last_seen_date.setText(""+ mDay + "/" + mMonth + "/" + mYear)
             }, year, month, day)

@@ -147,16 +147,16 @@
                 android:id="@+id/owner_btn"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="80dp"
                 android:background="@drawable/btn_green"
-                android:textColor="@color/white"
                 android:fontFamily="@font/roboto_light"
                 android:text="Submit"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_lastSeen_phone" />
+                app:layout_constraintTop_toTopOf="@+id/last_seen_btn" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -233,12 +233,13 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="150dp"
                 android:background="@drawable/edit_text_background"
                 android:hint="Missing Date"
                 android:fontFamily="@font/roboto_light"
                 android:inputType="date"
                 android:padding="10dp"
+                android:enabled="false"
                 android:paddingLeft="10dp"
                 android:paddingStart="15dp"
 
@@ -257,6 +258,20 @@
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/top_view" />
+
+            <Button
+                android:id="@+id/last_seen_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.894"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_lastSeen_phone"
+                android:background="@drawable/btn_green"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_light"
+                />
 
             <!--            <Spinner-->
 <!--                android:id="@+id/spinner2"-->
